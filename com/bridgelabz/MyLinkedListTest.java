@@ -20,7 +20,7 @@ public class MyLinkedListTest {
 	}
 
 	@Test
-	public void given3NumberWhenAppendToTheLinkedListShouldBeAddedOnLast() {
+	public void given3NumberWhenAddedToTheLinkedListShouldBeAddedOnLast() {
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNode = new MyNode<>(56);
