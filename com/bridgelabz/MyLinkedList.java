@@ -73,17 +73,14 @@ public class MyLinkedList<K> {
 		return tempNode;
 	}
 	public INode Search(K Key) {
-		int flag = 0;
 		INode tempNode = head;
 		while (tempNode != null) {
 			if (tempNode.getKey() == Key) {
 				System.out.println("Key is present");
-				flag = 1;
-				break;
+				return tempNode;
 			}
 			tempNode = tempNode.getNext();
 		}
-		if (flag == 0)
 			System.out.println("Key is not present");
 		return null;
 	}
@@ -92,15 +89,14 @@ public class MyLinkedList<K> {
 		MyLinkedList myLinkList = new MyLinkedList();
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
 		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
-		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
 
 		myLinkList.append(myFirstNode);
-		myLinkList.append(myThirdNode);
+		myLinkList.append(myFourthNode);
 		myLinkList.insert(myFirstNode, mySecondNode);
-		System.out.println("Enter the element you want to search");
-		Scanner sc = new Scanner(System.in);
-		int key = sc.nextInt();
-		myLinkList.Search(key);
+		INode tempNode = myLinkList.Search(30);
+		myLinkList.insert(tempNode, myThirdNode);
 		myLinkList.printMyNodes();
 		
 
