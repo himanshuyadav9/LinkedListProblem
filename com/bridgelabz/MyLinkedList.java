@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class MyLinkedList<K> {
 	public INode head;
 	public INode tail;
@@ -31,6 +33,7 @@ public class MyLinkedList<K> {
 				myNode.append("->");
 			tempNode = tempNode.getNext();
 		}
+		myNode.append(tail.getKey());
 		System.out.println(myNode);
 	}
 
@@ -69,6 +72,21 @@ public class MyLinkedList<K> {
 		 tempNode= tempNode.getNext();
 		return tempNode;
 	}
+	public INode Search(K Key) {
+		int flag = 0;
+		INode tempNode = head;
+		while (tempNode != null) {
+			if (tempNode.getKey() == Key) {
+				System.out.println("Key is present");
+				flag = 1;
+				break;
+			}
+			tempNode = tempNode.getNext();
+		}
+		if (flag == 0)
+			System.out.println("Key is not present");
+		return null;
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to Linked List Problem");
 		MyLinkedList myLinkList = new MyLinkedList();
@@ -79,8 +97,12 @@ public class MyLinkedList<K> {
 		myLinkList.append(myFirstNode);
 		myLinkList.append(myThirdNode);
 		myLinkList.insert(myFirstNode, mySecondNode);
-		myLinkList.popLast();
+		System.out.println("Enter the element you want to search");
+		Scanner sc = new Scanner(System.in);
+		int key = sc.nextInt();
+		myLinkList.Search(key);
 		myLinkList.printMyNodes();
+		
 
 	}
 	
