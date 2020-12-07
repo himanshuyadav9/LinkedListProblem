@@ -44,10 +44,7 @@ public class MyLinkedList {
 			this.tail = newNode;
 		}
 	}
-	private INode setNext(INode newNode) {
-		return null;
-	}
-
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Linked List Problem");
 		MyLinkedList myLinkList = new MyLinkedList();
